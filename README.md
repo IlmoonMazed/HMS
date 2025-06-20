@@ -1,4 +1,4 @@
-# Starter React Project for the Supabase Course
+# Hospital Management System
 
 **How to run the starter project:**
 
