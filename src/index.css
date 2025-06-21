@@ -32,3 +32,85 @@ nav h1 {
   margin: 20px auto;
   padding: 20px;
 }
+
+
+
+/* form styles */
+
+.signIn {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 6px var(--primary);
+}
+
+button {
+  margin-top: 2rem;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0f9e88; /* Slightly darker shade */
+}
+
+.error {
+  margin-top: 1rem;
+  color: #e03e2f; /* red for errors */
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .signIn {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
