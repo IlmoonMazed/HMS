@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { setCookie } from "../utils/cookie"
 import supabase from "../config/supabaseClient"
 
 const SignIn = () => {
@@ -33,10 +34,8 @@ const SignIn = () => {
       setFormError('Wrong email or password');
       return;
     }
-  
-    // ✅ Save User_ID (and Role_ID if you want) to localStorage
-    localStorage.setItem('user_id', data.User_ID);
-    localStorage.setItem('role_id', data.Role_ID);
+
+    setCookie('user_id', data.User_ID);
   
     setFormError(null);
     navigate(`/${data.Role_ID}`);

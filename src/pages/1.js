@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { getCookie } from "../utils/cookie";
 import supabase from "../config/supabaseClient";
 
 const ShowRoleID1 = () => {
@@ -10,7 +11,7 @@ const ShowRoleID1 = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const userId = localStorage.getItem('user_id');
+    const userId = getCookie('user_id');
 
     if (!userId) {
       setFormError("User not logged in");
