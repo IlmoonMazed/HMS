@@ -114,3 +114,154 @@ button:hover {
     font-size: 1rem;
   }
 }
+
+
+/* sign up link  */
+
+.signUp-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signUp-button {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.signUp-button:hover {
+  text-decoration: underline;
+}
+
+
+/* sign up  */
+.signUp {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.signUp form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signUp label {
+  margin-bottom: 0.2rem;
+  color: black;
+  font-weight: bold;
+}
+
+.signUp input,
+.signUp select {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.signUp button {
+  padding: 0.8rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signUp button:hover {
+  background: #0da48d; /* slightly darker primary */
+}
+
+.signUp .error {
+  color: #e63946;
+  background: #ffe5e5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 500px) {
+  .signUp {
+    padding: 1rem;
+  }
+}
+
+
+/* update profile */
+.update-profile {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.update-profile h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.update-profile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-profile label {
+  margin-bottom: 0.3rem;
+  color: black;
+  font-weight: bold;
+}
+
+.update-profile input,
+.update-profile select {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.update-profile input:focus,
+.update-profile select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.update-profile button {
+  padding: 0.7rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-profile button:hover {
+  background: #0ea68d;
+}
+
+.update-profile .error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .update-profile {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

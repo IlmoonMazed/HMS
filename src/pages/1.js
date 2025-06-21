@@ -6,7 +6,7 @@ import supabase from "../config/supabaseClient";
 const ShowRoleID1 = () => {
   const navigate = useNavigate();
 
-  const [doctor, setDoctor] = useState(null);
+  const [user, setUser] = useState(null);
   const [formError, setFormError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -19,7 +19,7 @@ const ShowRoleID1 = () => {
       return;
     }
 
-    const fetchDoctorData = async () => {
+    const fetchUserData = async () => {
       const { data, error } = await supabase
         .from("User")
         .select(
@@ -31,42 +31,42 @@ const ShowRoleID1 = () => {
       if (error) {
         console.log(error);
         setFormError("Something went wrong while fetching data");
-        setDoctor(null);
+        setUser(null);
       } else {
-        setDoctor(data);
+        setUser(data);
         setFormError(null);
       }
       setLoading(false);
     };
 
-    fetchDoctorData();
+    fetchUserData();
   }, []);
 
   if (loading) {
-    return <div className="loading">Loading doctor data...</div>;
+    return <div className="loading">Loading User data...</div>;
   }
 
   if (formError) {
     return <div className="error">{formError}</div>;
   }
 
-  if (!doctor) {
-    return <div className="no-data">No doctor found</div>;
+  if (!user) {
+    return <div className="no-data">No user found</div>;
   }
 
   return (
     <div className="doctor-profile">
       <h2>Doctor Profile</h2>
       <div className="doctor-info">
-        <p><span className="label">User ID:</span> {doctor.User_ID}</p>
-        <p><span className="label">Name:</span> {doctor.Name}</p>
-        <p><span className="label">Role ID:</span> {doctor.Role_ID}</p>
-        <p><span className="label">Registration Date:</span> {new Date(doctor.Registration_Date).toLocaleDateString()}</p>
-        <p><span className="label">Gender:</span> {doctor.Gender}</p>
-        <p><span className="label">Date of Birth:</span> {new Date(doctor.Date_of_Birth).toLocaleDateString()}</p>
-        <p><span className="label">Email:</span> {doctor.Email}</p>
-        <p><span className="label">Phone:</span> {doctor.Phone}</p>
-        <p><span className="label">Address:</span> {doctor.Address}</p>
+        <p><span className="label">User ID:</span> {user.User_ID}</p>
+        <p><span className="label">Name:</span> {user.Name}</p>
+        <p><span className="label">Role ID:</span> {user.Role_ID}</p>
+        <p><span className="label">Registration Date:</span> {new Date(user.Registration_Date).toLocaleDateString()}</p>
+        <p><span className="label">Gender:</span> {user.Gender}</p>
+        <p><span className="label">Date of Birth:</span> {new Date(user.Date_of_Birth).toLocaleDateString()}</p>
+        <p><span className="label">Email:</span> {user.Email}</p>
+        <p><span className="label">Phone:</span> {user.Phone}</p>
+        <p><span className="label">Address:</span> {user.Address}</p>
       </div>
     </div>
   );

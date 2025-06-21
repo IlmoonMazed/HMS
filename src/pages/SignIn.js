@@ -66,6 +66,10 @@ const SignIn = () => {
 
         {formError && <p className="error">{ formError }</p>}
       </form>
+
+      <div className="signUp-link">
+        <p>Don't have an account? <span onClick={() => navigate('/signUp')} className="signUp-button">Sign Up</span></p>
+      </div>
     </div>
   )
 }
